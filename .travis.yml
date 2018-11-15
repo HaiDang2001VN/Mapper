@@ -32,14 +32,12 @@ before_install:
 
 install:
   - sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
-  - sudo apt-get install ros-kinetic-roscpp ros-kinetic-roslib ros-kinetic-cv-bridge ros-kinetic-pcl-ros
-  - sudo apt-get install ros-kinetic-image-transport ros-kinetic-sensor-msgs ros-kinetic-geometry-msgs
-  - sudo apt-get install ros-kinetic-catkin
 
 before_script:
+  - nvidia-smi
   - cd ..
   - mkdir catkin_ws && cd catkin_ws
-  - catkin_make
+  - catkin init
   - mv ../Pinhole-Fisheye-Mapping src/Mapper
   
 script:
