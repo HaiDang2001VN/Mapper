@@ -19,10 +19,11 @@ addons:
       - gcc
       - g++
       - libopencv-dev
-      - nvidia-384
+      - nvidia-384-dev
       - nvidia-modprobe
       - libboost-all-dev
       - libeigen3-dev
+      - nvidia-cuda-toolkit
 before_install:
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
   - sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
@@ -34,7 +35,6 @@ before_install:
 
 install:
   - sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
-  - sh install_cuda.sh
 
 before_script:
   - nvidia-smi
