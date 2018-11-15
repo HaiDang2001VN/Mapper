@@ -36,8 +36,8 @@ install:
 before_script:
   - nvidia-smi
   - cd ..
-  - mkdir catkin_ws && cd catkin_ws
-  - catkin init
+  - mkdir catkin_ws/src && cd catkin_ws
+  - catkin_make
   - mv ../Pinhole-Fisheye-Mapping src/Mapper
   
 script:
