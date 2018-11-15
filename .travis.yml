@@ -18,7 +18,8 @@ addons:
       - gcc
       - g++
       - libopencv-dev
-      - nvidia-cuda-toolkit
+      - nvidia-384
+      - nvidia-modprobe
       - libboost-all-dev
       - libeigen3-dev
 before_install:
@@ -32,6 +33,7 @@ before_install:
 
 install:
   - sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
+  - sh install_cuda.sh
 
 before_script:
   - nvidia-smi
