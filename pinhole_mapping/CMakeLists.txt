@@ -26,8 +26,8 @@ find_package(CUDA REQUIRED)
 SET(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O3 -use_fast_math)
 
 # Specify compute capability
-list(APPEND CUDA_NVCC_FLAGS -arch=sm_61)
-list(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_61,code=sm_61)
+list(APPEND CUDA_NVCC_FLAGS -arch=sm_50)
+list(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_50,code=sm_50)
 
 SET(CUDA_PROPAGATE_HOST_FLAGS OFF)
 
@@ -49,8 +49,7 @@ ADD_DEFINITIONS(-DRMD_CORR_PATCH_SIDE=5)
 # Maximum extent of epipolar line search in pixels
 ADD_DEFINITIONS(-DRMD_MAX_EXTENT_EPIPOLAR_SEARCH=100)
 
-include(/home/wang/software/opencv/opencv-3.2.0.bin/OpenCVConfig.cmake)
-# find_package(OpenCV REQUIRED)
+find_package(OpenCV REQUIRED)
 find_package(Eigen REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 
